@@ -9,11 +9,7 @@ function App() {
         {id: 2, title: 'JS', isDone: true},
         {id: 3, title: 'React', isDone: false}
     ]
-    let tasks2: Array<TaskType>  = [
-        {id: 1, title: 'Terminator', isDone: true},
-        {id: 2, title: 'XXX', isDone: false},
-        {id: 3, title: 'Big Nothing', isDone: true}
-    ]
+
 
     return (
         <div className="App">
