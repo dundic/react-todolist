@@ -13,7 +13,7 @@ function App() {
 
     return (
         <div className="App">
-            < Todolist title={"What to learn"} tasks={tasks1}/>
+            < Todolist title="What to learn" tasks={tasks1}/>
         </div>
     );
 }
