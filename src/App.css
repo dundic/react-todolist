@@ -1,8 +1,28 @@
 .App {
   padding: 30px;
   display: flex;
+  flex-direction: row;
 }
 
 .App > div {
   margin-right: 50px;
+}
+
+.todolist {
+  background-color: burlywood;
+  border: 2px solid gray;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.todolist ul {
+  list-style-type: none;
+}
+
+.App .todolist:first-child {
+  background-color: #79ef79;
+}
+
+.App .todolist:last-child {
+  background-color: #e1c744;
 }

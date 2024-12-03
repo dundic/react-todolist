@@ -1,38 +1,39 @@
-import React from "react";
+import React, {JSXElementConstructor} from "react";
+import {TaskType} from "./App";
+import {Button} from "./Button";
+import {TodolistHeader} from "./TodolistHeader";
+import {AddForm} from "./AddForm";
+import {FilterButtons} from "./FilterButtons";
 
-export type TaskType = {
-    id: number
+
+type TodolistPropsType = {
     title: string
-    isDone: boolean
+    tasks: TaskType[]
 }
 
-type PropsType = {
-    title: string
-    tasks: Array<TaskType>
-
-}
-
-export function Todolist(props: PropsType) {
+export function Todolist(props: TodolistPropsType) {
+    // условный рендеринг
+    const tasksList = props.tasks.length === 0
+            ? <span>Your todolist is empty</span>
+            : <ul>
+                {
+                    props.tasks.map(t => {
+                        return (
+                                <li>
+                                    <input type="checkbox" checked={t.isDone}/>
+                                    <span>{t.title}</span>
+                                </li>
+                        )
+                    })
+                }
+            </ul>
 
     return (
-        <div>
-            <h3>{props.title}</h3>
-            <div>
-                <input/>
-                <button>+</button>
-                <ul>
-                    <li><input type="checkbox" checked={props.tasks[0].isDone}/><span>{props.tasks[0].title}</span></li>
-                    <li><input type="checkbox" checked={props.tasks[1].isDone}/><span>{props.tasks[1].title}</span></li>
-                    <li><input type="checkbox" checked={props.tasks[2].isDone}/><span>{props.tasks[2].title}</span></li>
-
-                </ul>
-                <div>
-                    <button>All</button>
-                    <button>Active</button>
-                    <button>Completed</button>
-                </div>
+            <div className={'todolist'}>
+                <TodolistHeader titleHeader={props.title}/>
+                <AddForm/>
+                {tasksList}
+                <FilterButtons/>
             </div>
-
-        </div>
     )
 }
