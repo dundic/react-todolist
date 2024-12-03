@@ -1,6 +1,5 @@
-import React, {JSXElementConstructor} from "react";
+import React from "react";
 import {TaskType} from "./App";
-import {Button} from "./Button";
 import {TodolistHeader} from "./TodolistHeader";
 import {AddForm} from "./AddForm";
 import {FilterButtons} from "./FilterButtons";
