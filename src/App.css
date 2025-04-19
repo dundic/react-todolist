@@ -20,9 +20,26 @@
 }
 
 .App .todolist:first-child {
-  background-color: #79ef79;
+  background-color: #e1c744;
+
 }
 
 .App .todolist:last-child {
-  background-color: #e1c744;
+  background-color: #79ef79;
+}
+
+.error {
+  border: 2px solid red;
+}
+
+.error-message {
+  color: red;
+}
+
+.active-filter {
+  background-color: lime;
+}
+
+.is-done {
+  opacity: 0.5
 }
